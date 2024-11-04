@@ -10,7 +10,13 @@
 <body>
     <div class="container my-4">
         <div class="d-flex justify-content-between align-items-center">
-            <div id="tipologieContainer" class="tipologie-container"></div>
+            <div id="tipologieContainer" class="tipologie-container d-flex">
+                <button class="btn btn-outline-primary me-2">Cardiologia</button>
+                <button class="btn btn-outline-primary me-2">Psicologia</button>
+                <button class="btn btn-outline-primary me-2">Oncologia</button>
+                <button class="btn btn-outline-primary me-2">Ortopedia</button>
+                <button class="btn btn-outline-primary me-2">Neurologia</button>
+            </div>
             <button id="btnPrenota" class="btn btn-success btn-prenota" data-bs-toggle="modal" data-bs-target="#prenotazioneModal">PRENOTA ➔</button>
         </div>
 
@@ -18,20 +24,8 @@
             <button id="btnSettimanaPrecedente" class="btn btn-light btn-nav">Precedente</button>
             <button id="btnSettimanaSuccessiva" class="btn btn-light btn-nav">Successiva</button>
         </div>
-
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Lunedì</th>
-                    <th>Martedì</th>
-                    <th>Mercoledì</th>
-                    <th>Giovedì</th>
-                    <th>Venerdì</th>
-                </tr>
-            </thead>
-            <tbody id="tabellaPrenotazioni"></tbody>
-        </table>
+        <div id="tabella">
+        </div>
     </div>
     <div class="modal fade" id="prenotazioneModal" tabindex="-1" aria-labelledby="prenotazioneModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -65,8 +59,7 @@
             </div>
         </div>
     </div>
-
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index-javascript.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
