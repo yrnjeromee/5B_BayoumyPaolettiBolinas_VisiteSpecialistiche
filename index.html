@@ -1,27 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="index-css.css" />
-        <title>visite specialistiche</title>
-    </head>
-    <body>
-        <div class="container">
-            
-            <button type="button" class="btn btn-outline-primary">Cardiologia</button>
-            <button type="button" class="btn btn-outline-primary">Psicologia</button>
-            <button type="button" class="btn btn-outline-primary active">Oncologia</button>
-            <button type="button" class="btn btn-outline-primary">Ortopedia</button>
-            <button type="button" class="btn btn-outline-primary">Neurologia</button>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="btn btn-outline-success active">Prenota</button>
-            </div>
-            <div id="tabella">
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Prenotazioni - Bayoumy Bolinas Paoletti</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Visualizza Prenotazioni</h1>
+            <button id="btnPrenota" class="btn btn-primary">Prenota</button>
         </div>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="index-javascript.js"></script>
-    </body>
+        <div id="tipologieContainer" class="btn-group mb-4">
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ora</th>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Gio</th>
+                    <th>Ven</th>
+                </tr>
+            </thead>
+            <tbody id="tabellaPrenotazioni">
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <button id="btnSettimanaPrecedente" class="btn btn-secondary">Settimana Precedente</button>
+            <button id="btnSettimanaSuccessiva" class="btn btn-secondary">Settimana Successiva</button>
+        </div>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
