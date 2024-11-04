@@ -1,14 +1,38 @@
-.tabella {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
+body {
+    background-color: #f8f9fa;
 }
-.tabella th {
-    background-color: aqua;
-    border: 1px solid black;
 
+h1 {
+    font-size: 1.75rem;
+    color: #343a40;
 }
-.miao {
-    border: 1px solid black;
-    background-color: lightgreen;
+
+#tipologieContainer button {
+    margin-right: 5px;
+}
+
+.table {
+    text-align: center;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.btn-primary, .btn-outline-primary {
+    min-width: 100px;
+    text-align: center;
+}
+
+#btnPrenota {
+    font-size: 1rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    font-size: 0.9rem;
 }

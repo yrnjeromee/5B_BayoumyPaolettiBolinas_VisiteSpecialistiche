@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Prenotazioni - Bayoumy Bolinas Paoletti</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>Visualizza Prenotazioni</h1>
+            <h1> Prenotazioni</h1>
             <button id="btnPrenota" class="btn btn-primary">Prenota</button>
         </div>
         <div id="tipologieContainer" class="btn-group mb-4">
@@ -18,23 +19,23 @@
             <thead>
                 <tr>
                     <th>Ora</th>
-                    <th>Lun</th>
-                    <th>Mar</th>
-                    <th>Mer</th>
-                    <th>Gio</th>
-                    <th>Ven</th>
+                    <th>Lunedì</th>
+                    <th>Martedì</th>
+                    <th>Mercoledì</th>
+                    <th>Giovedì</th>
+                    <th>Venerdì</th>
                 </tr>
             </thead>
             <tbody id="tabellaPrenotazioni">
             </tbody>
         </table>
         <div class="d-flex justify-content-between">
-            <button id="btnSettimanaPrecedente" class="btn btn-secondary">Settimana Precedente</button>
-            <button id="btnSettimanaSuccessiva" class="btn btn-secondary">Settimana Successiva</button>
+            <button id="btnSettimanaPrecedente" class="btn btn-secondary">settimana precedente</button>
+            <button id="btnSettimanaSuccessiva" class="btn btn-secondary">settimana successiva</button>
         </div>
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/moment/min/moment.min.js"></script>
-    <script src="app.js"></script>
+    <script src="index-javascript.js"></script>
 </body>
 </html>
