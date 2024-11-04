@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestione Prenotazioni - Bayoumy Bolinas Paoletti</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Gestione Prenotazioni - Clinica Bayoumy Paoletti Bolinas</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1> Prenotazioni</h1>
-            <button id="btnPrenota" class="btn btn-primary">Prenota</button>
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div id="tipologieContainer" class="tipologie-container"></div>
+            <button id="btnPrenota" class="btn btn-success btn-prenota" data-bs-toggle="modal" data-bs-target="#prenotazioneModal">PRENOTA ➔</button>
         </div>
-        <div id="tipologieContainer" class="btn-group mb-4">
+
+        <div class="d-flex justify-content-between mt-3">
+            <button id="btnSettimanaPrecedente" class="btn btn-light btn-nav">Precedente</button>
+            <button id="btnSettimanaSuccessiva" class="btn btn-light btn-nav">Successiva</button>
         </div>
-        <table class="table table-bordered">
+
+        <table class="table mt-3">
             <thead>
                 <tr>
-                    <th>Ora</th>
+                    <th></th>
                     <th>Lunedì</th>
                     <th>Martedì</th>
                     <th>Mercoledì</th>
@@ -26,16 +30,43 @@
                     <th>Venerdì</th>
                 </tr>
             </thead>
-            <tbody id="tabellaPrenotazioni">
-            </tbody>
+            <tbody id="tabellaPrenotazioni"></tbody>
         </table>
-        <div class="d-flex justify-content-between">
-            <button id="btnSettimanaPrecedente" class="btn btn-secondary">settimana precedente</button>
-            <button id="btnSettimanaSuccessiva" class="btn btn-secondary">settimana successiva</button>
+    </div>
+    <div class="modal fade" id="prenotazioneModal" tabindex="-1" aria-labelledby="prenotazioneModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="formPrenotazione">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Data</label>
+                            <input type="text" id="dataPrenotazione" class="form-control" readonly>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Ora</label>
+                            <select id="oraPrenotazione" class="form-control">
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" id="nominativoPrenotazione" class="form-control" required>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-danger btn-azione" data-bs-dismiss="modal">ANNULLA</button>
+                            <button type="submit" class="btn btn-success btn-azione">PRENOTA</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="node_modules/moment/min/moment.min.js"></script>
     <script src="index-javascript.js"></script>
 </body>
 </html>
