@@ -27,3 +27,15 @@
 .btn-success {
     background-color: #32CD32;
 }
+
+.tabella{
+    border: 1px solid black;
+}
+
+.tabella th{
+    background-color: lightblue;
+}
+
+.miao{
+    background-color: lightgreen;
+}

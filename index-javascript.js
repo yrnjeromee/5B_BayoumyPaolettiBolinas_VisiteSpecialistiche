@@ -1,62 +1,102 @@
+const tabella = document.getElementById("tabella");
+const submit = document.getElementById("submit");
+const card = document.getElementById("card");
+const psico = document.getElementById("psico");
+const onco = document.getElementById("onco");
+const orto = document.getElementById("orto");
+const neuro = document.getElementById("neuro");
 const tipologieVisite = ["Cardiologia", "Psicologia", "Oncologia", "Ortopedia", "Neurologia"];
 let prenotazioni = {};
-let tipologiaCorrente = tipologieVisite[0];  
-let dataCorrente = moment().startOf('isoWeek');
+let tipologiaCorrente = tipologieVisite[0];
+//let dataCorrente = moment().startOf('isoWeek');
 
-const tabella = document.getElementById("tabella");
+
+let data = "";
+let ora = 0;
+let nome = "";
+let diz = {};
+
+submit.onclick = () =>{
+    data = document.getElementById("data").value;
+    ora = document.getElementById("ora").value;
+    nome = document.getElementById("nome").value;
+    let lista = [data,ora];
+    if(diz[0] === 1){
+        lista.push("Cardiologia");
+    }
+    if(diz[1] === 1){
+        lista.push("Psicologia");
+    }
+    if(diz[2] ===1){
+        lista.push("Oncologia");
+    }
+    if(diz[3] === 1){
+        lista.push("Ortologia");
+    }
+    if(diz[4] === 1){
+        lista.push("Neurologia");
+    }
+    prenotazioni[lista] = nome;
+    console.log(prenotazioni);
+}
+
+card.onclick = () =>{
+    diz[0] = 1;
+    diz[1] = 0;
+    diz[2] = 0;
+    diz[3] = 0;
+    diz[4] = 0;
+    //card.classlist.add("active")
+}
+
+psico.onclick = () =>{
+    diz[0] = 0;
+    diz[1] = 1;
+    diz[2] = 0;
+    diz[3] = 0;
+    diz[4] = 0;
+    //psico.classlist.add("active")
+}
+
+onco.onclick = () =>{
+    diz[0] = 0;
+    diz[1] = 0;
+    diz[2] = 1;
+    diz[3] = 0;
+    diz[4] = 0;
+    //onco.classlist.add("active")
+}
+
+orto.onclick = () =>{
+    diz[0] = 0;
+    diz[1] = 0;
+    diz[2] = 0;
+    diz[3] = 1;
+    diz[4] = 0;
+    //orto.classlist.add("active")
+}
+
+neuro.onclick = () =>{
+    diz[0] = 0;
+    diz[1] = 0;
+    diz[2] = 0;
+    diz[3] = 0;
+    diz[4] = 1;
+    //neuro.classlist.add("active")
+}
 
 const myToken = '1d4744d3-cd6c-41a9-8ece-f5e071a27cfd';
 const myKey = 'Visite_specialistiche';
 
 template = `
-<table>
+<table class = "tabella">
     <tr>
-        <th>Intestazione 1</th>
+        <td></td>
         <th>Intestazione 2</th>
         <th>Intestazione 3</th>
         <th>Intestazione 4</th>
         <th>Intestazione 5</th>
         <th>Intestazione 6</th>
-    </tr>
-    <tr>
-        <td>Dato 1</td>
-        <td>Dato 2</td>
-        <td>Dato 3</td>
-        <td>Dato 4</td>
-        <td>Dato 5</td>
-        <td>Dato 6</td>
-    </tr>
-    <tr>
-        <td>Dato 7</td>
-        <td>Dato 8</td>
-        <td>Dato 9</td>
-        <td>Dato 10</td>
-        <td>Dato 11</td>
-        <td>Dato 12</td>
-    </tr>
-    <tr>
-        <td>Dato 13</td>
-        <td>Dato 14</td>
-        <td>Dato 15</td>
-        <td>Dato 16</td>
-        <td>Dato 17</td>
-        <td>Dato 18</td>
-    </tr>
-    <tr>
-        <td>Dato 19</td>
-        <td>Dato 20</td>
-        <td>Dato 21</td>
-        <td>Dato 22</td>
-        <td>Dato 23</td>
-        <td>Dato 24</td>
-    </tr>
-    <tr>
-        <td>Dato 25</td>
-        <td>Dato 26</td>
-        <td>Dato 27</td>
-        <td>Dato 28</td>
-        <td>Dato 29</td>
-        <td>Dato 30</td>
     </tr>
 </table>`;
 
