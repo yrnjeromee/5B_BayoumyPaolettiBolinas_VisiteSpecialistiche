@@ -4,9 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="index-css.css" />
         <title>visite specialistiche</title>
     </head>
     <body>
+        <div class="container">
+            
+            <button type="button" class="btn btn-outline-primary">Cardiologia</button>
+            <button type="button" class="btn btn-outline-primary">Psicologia</button>
+            <button type="button" class="btn btn-outline-primary active">Oncologia</button>
+            <button type="button" class="btn btn-outline-primary">Ortopedia</button>
+            <button type="button" class="btn btn-outline-primary">Neurologia</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-outline-success active">Prenota</button>
+            </div>
+            <div id="tabella">
+            </div>
+        </div>
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="index-javascript.js"></script>
     </body>
 </html>
